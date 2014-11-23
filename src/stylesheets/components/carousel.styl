@@ -1,0 +1,45 @@
+//
+// Carousel
+// --------------------------------------------------
+
+
+.carousel
+	center(500px)
+	@extend $clearfix
+	margin-top 30px
+	margin-bottom 40px
+	background white
+	position relative
+	border-radius 4px
+	
+.carousel-header
+	padding 40px
+	position relative
+	background brand-danger
+	font-weight 700
+	font-size font-size-h3
+	color white
+	
+.carousel-control
+	position absolute
+	top 20%
+	bottom 50%
+	font-size 60px
+	text-shadow 0px 2px gray-200
+	cursor pointer
+	
+.carousel-control-left
+	@extend .carousel-control
+	left 40px
+	
+.carousel-control-right
+	@extend .carousel-control
+	right 40px
+
+.carousel-body
+	padding 40px 40px
+	border-bottom 4px solid gray-lighter
+	font-family font-family-serif
+	font-size font-size-h2
+	color gray-dark
+	

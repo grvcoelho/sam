@@ -1,0 +1,42 @@
+//
+// Grid System
+// ---------------------------------------
+
+
+// Rows and containers
+// ---------------------------------------
+
+.row
+ @extend $clearfix
+  
+.container
+  @extend $clearfix
+  center(container-xl)
+
+  +above('sm')
+    max-width container-sm
+  +above('md')
+    max-width container-md
+  +above('lg')
+    max-width container-lg
+  +above('xl')
+    max-width container-xl
+
+.container-fluid
+  @extend .container
+  max-width container-fluid
+
+
+
+// Grid elements
+// ---------------------------------------
+
+grid-columns = 12
+
+for i in (1..grid-columns)
+  .col-{i}
+    col(i/grid-columns)
+
+for i in (1..grid-columns)
+  .span-{i}
+    span(i/grid-columns)

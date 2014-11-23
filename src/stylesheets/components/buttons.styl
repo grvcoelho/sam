@@ -1,0 +1,70 @@
+//
+// Buttons
+// ----------------------------------------
+
+
+// Default button
+// ----------------------------------------
+
+.btn
+	display inline-block
+	padding padding-vertical-base padding-horizontal-base
+	border 0
+	border 1px solid transparent
+	background-image none
+	border-radius border-radius-small
+	font-weight 600
+	font-size font-size-base
+	color white
+	line-height line-height-base
+	text-align center
+	vertical-align middle
+	word-spacing nowrap
+	cursor pointer
+	&:focus
+		outline 0
+
+
+
+// Button colors
+// ----------------------------------------
+
+.btn-default
+	color text-color
+	background-color gray-100
+	button()
+
+.btn-info
+	background-color brand-info
+	button()
+
+.btn-success
+	background-color brand-success
+	button()
+
+.btn-warning
+	background-color brand-warning
+	button()
+
+.btn-danger
+	background-color brand-danger
+	button()
+
+
+
+// Button sizes
+// ----------------------------------------
+
+.btn-sm
+	padding padding-vertical-smaller padding-horizontal-smaller
+	
+.btn-lg
+	font-size font-size-large
+	padding padding-vertical-large padding-horizontal-large
+
+.btn-block
+	width 100%
+	display block
+
+.btn-block + .btn-block
+	margin-top 5px

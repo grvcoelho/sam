@@ -1,0 +1,169 @@
+//
+// Tables
+// ----------------------------------------
+
+
+// Variables
+// ----------------------------------------
+
+table-bg        = transparent
+table-bg-hover  = #f5f5f5
+table-bg-accent = #f9f9f9
+table-bg-active = table-bg-hover
+
+table-border-color = #ddd
+
+table-cell-padding           = 8px
+table-condensed-cell-padding = 5px
+
+
+
+// Table
+// ----------------------------------------
+
+table 
+  background-color table-bg
+
+caption 
+  padding-top table-cell-padding
+  padding-bottom table-cell-padding
+  color text-muted
+  text-align left
+
+th 
+  text-align left
+
+.table 
+  width 100%
+  max-width 100%
+  margin-bottom line-height-computed
+
+  > thead
+  > tbody
+  > tfoot 
+    > tr 
+      > th
+      > td 
+        padding table-cell-padding
+        line-height line-height-base
+        vertical-align top
+        border-top 1px solid table-border-color
+      
+  > thead > tr > th 
+    vertical-align bottom
+    border-bottom 2px solid table-border-color
+  
+  > caption + thead
+  > colgroup + thead
+  > thead:first-child 
+    > tr:first-child 
+      > th
+      > td 
+        border-top 0
+          
+  > tbody + tbody 
+    border-top 2px solid table-border-color
+  
+  .table 
+    background-color body-bg
+  
+
+
+// Table condensed
+// ----------------------------------------
+
+.table-condensed 
+  > thead
+  > tbody
+  > tfoot 
+    > tr 
+      > th
+      > td 
+        padding table-condensed-cell-padding
+      
+
+    
+// Table bordered
+// ----------------------------------------
+
+.table-bordered 
+  border 1px solid table-border-color
+  > thead
+  > tbody
+  > tfoot 
+    > tr 
+      > th
+      > td 
+        border 1px solid table-border-color
+      
+  > thead > tr 
+    > th
+    > td 
+      border-bottom-width 2px  
+  
+
+
+// Table striped
+// ----------------------------------------
+
+.table-striped 
+  > tbody > tr:nth-child(odd) 
+    background-color table-bg-accent
+  
+
+
+// Table hover
+// ----------------------------------------
+
+.table-hover 
+  > tbody > tr:hover 
+    background-color table-bg-hover
+  
+
+
+// Table responsive
+// ----------------------------------------
+
+.table-responsive 
+  overflow-x auto
+  min-height 0.01%
+
+  +below('sm')
+    width 100%
+    margin-bottom (line-height-computed * 0.75)
+    overflow-y hidden
+    -ms-overflow-style -ms-autohiding-scrollbar
+    border 1px solid table-border-color
+
+    > .table 
+      margin-bottom 0
+
+      > thead
+      > tbody
+      > tfoot 
+        > tr 
+          > th
+          > td 
+            white-space nowrap
+          
+    > .table-bordered 
+      border 0
+
+      > thead
+      > tbody
+      > tfoot 
+        > tr 
+          > th:first-child
+          > td:first-child 
+            border-left 0
+          
+          > th:last-child
+          > td:last-child 
+            border-right 0
+
+      > tbody
+      > tfoot 
+        > tr:last-child 
+          > th
+          > td 
+            border-bottom 0

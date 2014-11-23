@@ -1,0 +1,179 @@
+//
+// Navs
+// --------------------------------------------------
+
+
+// Variables
+// --------------------------------------------------
+
+nav-link-padding = 10px 15px
+nav-link-hover-bg = gray-lighter
+
+nav-disabled-link-color = gray-light
+nav-disabled-link-hover-color = gray-light
+
+nav-tabs-border-color = #ddd
+
+nav-tabs-link-hover-border-color = gray-lighter
+
+nav-tabs-active-link-hover-bg = body-bg
+nav-tabs-active-link-hover-color = gray
+nav-tabs-active-link-hover-border-color = #ddd
+
+nav-tabs-justified-link-border-color =  #ddd
+nav-tabs-justified-active-link-border-color = body-bg
+
+
+
+// Base class
+// --------------------------------------------------
+
+.nav
+  @extend $clearfix
+  margin-bottom 0
+  padding-left 0
+  list-style none
+
+  > li
+    position relative
+    display block
+
+    > a
+      position relative
+      display block
+      padding nav-link-padding
+      &:hover
+      &:focus
+        text-decoration none
+        background-color nav-link-hover-bg
+      
+
+    &.disabled > a
+      color nav-disabled-link-color
+
+      &:hover
+      &:focus
+        color nav-disabled-link-hover-color
+        text-decoration none
+        background-color transparent
+        cursor not-allowed
+      
+    
+  .open > a
+    &
+    &:hover
+    &:focus
+      background-color nav-link-hover-bg
+      border-color link-color
+    
+
+  > li > a > img
+    max-width none
+  
+
+
+// Nav justified
+// --------------------------------------------------
+
+.nav-justified
+  width 100%
+
+  > li
+    float none
+    > a
+      text-align center
+      margin-bottom 5px
+
+
+  > .dropdown .dropdown-menu
+    top auto
+    left auto
+
+  +above('md')
+    > li
+      display table-cell
+      width 1%
+      > a
+        margin-bottom 0
+
+
+
+// Nav tabs justified
+// --------------------------------------------------
+
+.nav-tabs-justified
+  border-bottom 0
+
+  > li > a
+    margin-right 0
+    border-radius border-radius-base
+ 
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus
+    border 1px solid nav-tabs-justified-link-border-color
+ 
+
+  +above('md')
+    > li > a
+      border-bottom 1px solid nav-tabs-justified-link-border-color
+      border-radius border-radius-base border-radius-base 0 0
+   
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus
+      border-bottom-color nav-tabs-justified-active-link-border-color
+  
+
+
+// Nav tabs
+// -------------------------
+
+.nav-tabs
+  border-bottom 1px solid nav-tabs-border-color
+  > li
+    float left
+    margin-bottom -1px
+
+    > a
+      margin-right 2px
+      color nav-tabs-active-link-hover-color
+      line-height line-height-base
+      border 1px solid transparent
+      // border-left none
+      // border-right none
+      border-radius border-radius-base border-radius-base 0 0
+      &:hover
+        border-color nav-tabs-link-hover-border-color nav-tabs-link-hover-border-color nav-tabs-border-color
+      
+    
+    &.active > a
+      &
+      &:hover
+      &:focus
+        color nav-tabs-active-link-hover-color
+        background-color nav-tabs-active-link-hover-bg
+        border 1px solid nav-tabs-active-link-hover-border-color
+        border-bottom-color transparent
+        cursor default
+
+
+  &.nav-justified 
+    @extend .nav-justified
+    @extend .nav-tabs-justified
+    
+
+
+// Tabbable tabs
+// -------------------------
+
+.tab-content 
+  > .tab-pane 
+    display none
+    visibility hidden
+  > .active 
+    display block
+    visibility visible
+
+  

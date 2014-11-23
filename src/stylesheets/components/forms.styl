@@ -1,0 +1,57 @@
+//
+// Forms
+// ----------------------------------------
+
+
+// Variables
+// ----------------------------------------
+
+// Input heights
+input-height-base  = (line-height-computed + (padding-vertical-base * 2) + 2)
+input-height-large = (ceil(font-size-large * line-height-large) + (padding-vertical-large * 2) + 2) 
+input-height-small = (floor(font-size-small * line-height-small) + (padding-vertical-small * 2) + 2) 
+
+// Input border colors
+input-border-color        = gray-900
+input-border-color-hover  = darken(input-border-color, 5%)
+input-border-color-active = brand-info
+
+// Input text
+input-color = gray-300
+
+
+
+// Form controls
+// ----------------------------------------
+
+.form-control 
+	display block
+	width 100%
+	height input-height-base
+	padding padding-vertical-base padding-horizontal-base
+	border 1px solid input-border-color
+	box-shadow inset 0 1px 1px rgba(0,0,0,.075)
+	font-size font-size-base
+	font-family font-family-base
+	font-weight 400
+	line-height line-height-base
+	color input-color
+	&:hover
+		border-color input-border-color-hover
+	&:focus
+		outline 0
+		border-color input-border-color-active
+
+.form-control + .form-control
+	z-index 400
+
+// Overides to textarea styles
+textarea.form-control
+	height auto
+	resize none
+
+// Form groups
+// ----------------------------------------
+
+.form-group
+	margin-bottom 15px

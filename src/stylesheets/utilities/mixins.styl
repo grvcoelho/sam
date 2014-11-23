@@ -1,0 +1,28 @@
+//
+// Mixins
+// ----------------------------------------
+
+
+// Buttons
+// ----------------------------------------
+
+button()
+  if @background
+    border-bottom-color darken(@background, 8%)
+    &:hover
+      background darken(@background, 4%)   
+    &:active
+      background darken(@background, 8%)
+      box-shadow inset 0px 1px 4px 0px rgba(50, 50, 50, 0.15)
+
+
+  else if @background-color
+    border-bottom-color darken(@background-color, 8%)
+    &:hover
+      background darken(@background-color, 4%)   
+    &:active
+      background darken(@background-color, 8%)
+      box-shadow inset 0px 1px 4px 0px rgba(50, 50, 50, 0.15)
+
+  else
+    warn('You need to set a color or background color on your element for this to work!')

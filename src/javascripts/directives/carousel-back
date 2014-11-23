@@ -1,0 +1,111 @@
+(function($, _, angular) {
+'use strict';
+
+angular.module('melancia.directives.carousel', [])
+
+.controller('CarouselController', [
+
+])
+
+.directive('carousel', ['$timeout', '$interval', '$log', function($timeout, $interval, $log) {
+
+	var template = [
+		'<div class="carousel" ng-mouseenter="pause()">',
+      '<div class="carousel-inner" ng-transclude></div>',
+      '<div style="margin-top: 40px">',
+	      '<button class="btn btn-default" ng-click="prev()">Prev</button>',
+	      '<button class="btn btn-default" ng-click="next()">Next</button>',
+	    '</div>',
+    '</div>'
+  ].join('');
+
+  return {
+    restrict: 'EA',
+    replace: true,
+    transclude: true,
+    template: template,
+    
+    controller: function($scope) {
+    	var slides = this.slides = [];
+    	var currentIndex = 0;
+      var timeout = 3000;
+      var self = this;
+
+      // $scope.init();
+      // 
+      $scope.pause = function() {
+        $log.info('over');
+      };
+
+    	this.addSlide = function(slide) {
+    		if(slides.length === 0) {
+    			$scope.selectSlide(slide);
+    		}
+
+    		slides.push(slide);
+    	};
+
+    	$scope.selectSlide = function(slide) {
+    		slide.addClass('active');
+    	};
+
+    	$scope.next = function() {
+        if(self.sliding === true)
+          return;
+
+    		var $currentSlide = slides[currentIndex];
+
+
+
+    		if(currentIndex === slides.length - 1) {
+    			currentIndex = 0;
+    		} else {
+    			currentIndex += 1;
+    		}
+
+    		var $nextSlide = slides[currentIndex];
+
+        $nextSlide.addClass('next');
+        self.sliding = true;
+
+        $timeout(function() {
+    		  $currentSlide.addClass('left');
+          $nextSlide.addClass('left');
+        }, 1);
+
+    		$timeout(function() {
+		  		$nextSlide.addClass('active');
+          $nextSlide.removeClass('next');
+          $nextSlide.removeClass('left');
+          $currentSlide.removeClass('active');
+          $currentSlide.removeClass('left');
+          self.sliding = false;
+		    }, 600);
+    	};
+
+    }
+  };
+}])
+
+.directive('slide', ['$log', function($log) {
+
+	var template = [
+		'<div class="item" ng-transclude></div>'
+	].join('');
+
+	return {
+		restrict: 'EA',
+		require: '^carousel',
+		replace: true,
+		transclude: true,
+		template: template,
+		link: function(scope, elem, attrs, carouselCtrl) {
+			var $elem = $(elem);
+
+			carouselCtrl.addSlide($elem);
+		}
+	};
+}])
+
+
+})(jQuery, _, angular);

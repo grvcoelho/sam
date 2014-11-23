@@ -1,0 +1,121 @@
+//
+// Variables
+// ----------------------------------------
+
+
+// Colors
+// ----------------------------------------
+
+gray-base = #000
+
+gray-100 = lighten(gray-base, 10%) // #1a1a1a
+gray-200 = lighten(gray-base, 20%) // #333333
+gray-300 = lighten(gray-base, 30%) // #4d4d4d
+gray-400 = lighten(gray-base, 40%) // #666666
+gray-500 = lighten(gray-base, 50%) // #808080
+gray-600 = lighten(gray-base, 60%) // #999999
+gray-700 = lighten(gray-base, 70%) // #b3b3b3
+gray-800 = lighten(gray-base, 80%) // #cccccc
+gray-900 = lighten(gray-base, 90%) // #e6e6e6
+
+gray-darker  = lighten(gray-base, 13.5%)
+gray-dark    = lighten(gray-base, 25%)
+gray         = gray-500
+gray-light   = gray-600
+gray-lighter = lighten(gray-base, 93%)
+ 
+brand-primary = #ffffff
+brand-info    = #2196f3
+brand-success = #60b044
+brand-warning = #ffc801
+brand-danger  = #f44336
+
+
+
+// Scaffolding
+// ----------------------------------------
+
+body-bg    = #ffffff
+text-color = gray-dark
+text-muted = gray-light
+
+link-color            = brand-primary
+link-hover-color      = darken(link-color, 15%)
+link-hover-decoration = underline
+
+padding-vertical-base   = 6px
+padding-horizontal-base = 12px
+
+padding-vertical-large   = 8px
+padding-horizontal-large = 16px
+
+padding-vertical-small   = 5px
+padding-horizontal-small = 10px
+
+padding-vertical-smaller   = 1px
+padding-horizontal-smaller = 5px
+
+border-radius-base  = 4px
+border-radius-large = 6px
+border-radius-small = 3px
+
+
+
+// Typography
+// ----------------------------------------
+
+font-family-sans-serif  = "Open Sans", Helvetica, Arial, sans-serif
+font-family-serif      = "Vollkorn", Georgia, "Times New Roman", Times, serif
+font-family-monospace  = Menlo, Monaco, Consolas, "Courier New", monospace
+font-family-base       = font-family-sans-serif
+
+font-size-base    = 14px
+font-size-smaller = ceil(font-size-base * 0.65)  // 10px
+font-size-small   = ceil(font-size-base * 0.85)  // 12px 
+font-size-large   = ceil(font-size-base * 1.25)  // 18px
+font-size-larger  = floor(font-size-base * 1.45) // 20px
+
+font-size-h1 = 75px  // 36px
+font-size-h2 = 30px // 30px
+font-size-h3 = ceil(font-size-base * 1.7)   // 24px 
+font-size-h4 = ceil(font-size-base * 1.25)  // 18px
+font-size-h5 = font-size-base 							// 14px
+font-size-h6 = ceil(font-size-base * 0.85)  // 12px
+
+line-height-base     = 1.428571429 // 20/14
+line-height-large    = 1.33
+line-height-small    = 1.5
+line-height-computed = floor((font-size-base * line-height-base)) // 20px
+
+headings-font-family = inherit
+headings-font-weight = 100
+headings-line-height = 1.1
+headings-color       = white
+
+
+
+// Breakpoints
+// ----------------------------------------
+
+rupture.scale       = 0 480px 768px 992px 1170px
+rupture.scale-names = 'xs' 'sm' 'md' 'lg' 'xl'
+
+
+
+// Grid system
+// ----------------------------------------
+
+grid-columns = 12
+
+
+
+// Container sizes
+// ----------------------------------------
+
+container-xs = 95%
+container-sm = 90%
+container-md = 90%
+container-lg = 980px
+container-xl = 1080px
+
+container-fluid = 95%
