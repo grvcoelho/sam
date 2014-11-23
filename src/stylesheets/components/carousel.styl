@@ -2,6 +2,7 @@
 // Carousel
 // --------------------------------------------------
 
+carousel-header-text-shadow = 0px 2px gray-100
 
 .carousel
 	center(500px)
@@ -17,15 +18,16 @@
 	position relative
 	background brand-danger
 	font-weight 700
-	font-size font-size-h3
+	font-size 26px
 	color white
+	text-shadow carousel-header-text-shadow
 	
 .carousel-control
 	position absolute
 	top 20%
 	bottom 50%
 	font-size 60px
-	text-shadow 0px 2px gray-200
+	text-shadow 0px 2px carousel-header-text-shadow
 	cursor pointer
 	
 .carousel-control-left
@@ -40,6 +42,6 @@
 	padding 40px 40px
 	border-bottom 4px solid gray-lighter
 	font-family font-family-serif
-	font-size font-size-h2
+	font-size 26px
 	color gray-dark
 	
