@@ -12,10 +12,10 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div class="main-section">
+  <div class="main-section" ng-controller="PostController">
     <h1>Por que eu te amo tanto?</h1>
-    <h2>Me perguntei isso todos os dias nos últimos 3 meses e aqui estão 180 dos meus motivos</h2><i class="icon-like-love-streamline"></i>
-    <div ng-controller="PostController" class="carousel">
+    <h2>Me perguntei isso todos os dias nos últimos 3 meses e aqui estão {{numberOfPosts}} dos meus motivos</h2><i class="icon-like-love-streamline"></i>
+    <div class="carousel">
       <div class="carousel-header">
          
         {{post.date}}
