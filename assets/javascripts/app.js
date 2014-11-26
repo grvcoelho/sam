@@ -11,7 +11,6 @@ angular.module('sam', [])
 	$http.get('data.json').success(function(data, status) {
 		self.posts = data;
 		$scope.post = self.posts[currentIndex];
-		$scope.numberOfPosts = self.posts.length;
 		$log.info(self.posts);
 	})
 
